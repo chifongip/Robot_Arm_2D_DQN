@@ -7,7 +7,7 @@ from tensorflow.keras import models
 
 
 env = arm_2D_v3.Arm_2D_v3()         # initial environment 
-model = models.load_model('models/final_arm_model_dqn_FCNN2.h5')   # load model 
+model = models.load_model('models/final_arm_model_dqn_LSTM.h5')   # load model 
 
 success = 0
 images = []  # create an empty list to store images for gif
