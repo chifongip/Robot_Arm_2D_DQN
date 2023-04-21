@@ -10,7 +10,6 @@ Models             : All trained models
 arm_2D_v2   : single target, single goal env, used for training DQN
 dqn.py      : modify and run the file to train, result is stored in Models folder
 test_dqn_v2.py : test the trained model
-
 arm_2D_v3   : multiple targets, single goal env, not for training
 test_dqn_v3.py : test the trained model to PnP multiple targets
 
