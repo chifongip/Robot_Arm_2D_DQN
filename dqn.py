@@ -127,7 +127,7 @@ for i in range(episodes):
         agent.train()                              # train : model weight adjusting, Q learning
         score += reward                            # acumulate score
         s = next_s                                 # update state
-        if done or step_count == 1000:             # episode termination
+        if done or step_count == 150:             # episode termination
             score_list.append(score)               # store score in score_list
             print('episode:', i, 'score:', score, 'max:', max(score_list), 'mean',current_mean)
             break
