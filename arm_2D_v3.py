@@ -356,7 +356,7 @@ class Arm_2D_v3(gym.Env):
         # print("Current score : ", self.current_score)
 
         # finish an epoch if accumulative reward is too small, or finished PnP several times
-        if self.current_score <= -20 or self.current_score >= 100: 
+        if self.current_score <= -20 or self.current_score >= 160: 
             done = True
         else:
             done = False
