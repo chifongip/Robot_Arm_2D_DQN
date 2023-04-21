@@ -18,6 +18,8 @@ gym, pygame, tensorflow, numpy, scipy
 
 # Testing 
 Run test_dqn_v3.py to test multiple objects PnP.  
+The number of objects can be changed (1-8 for this environment size)  
+The used model can be changed (refer to the following list)  
 ## Trained model 
 FCNN: final_arm_model_dqn_FCNN1.h5 / final_arm_model_dqn_FCNN2.h5  
 CNN: final_arm_model_dqn_CNN1.h5 / final_arm_model_dqn_CNN2.h5  
@@ -31,7 +33,8 @@ from tensorflow.keras import models
 
 
 env = arm_2D_v3.Arm_2D_v3()         # initial environment 
-model = models.load_model('models/final_arm_model_dqn_LSTM.h5')   # load model 
+env.num_target = 5                  # choose object number (1-8) 
+model = models.load_model('models/final_arm_model_dqn_CNN2.h5')   # load model 
 
 success = 0 
 
