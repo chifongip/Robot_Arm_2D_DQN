@@ -6,7 +6,7 @@ NUS ME5406 Final Project
 This project uses DQN algorithms for reinforcement learning of Robotic Arm to perform Pick-and-Place (PnP) task. The environment used for training can be found in arm_2D_v2 which is used to train DQN models and the environment for testing using multiple targets can be found in arm_2D_v3.
 
 # Main Files
-- Models      : All trained models
+- models      : all trained models
 - arm_2D_v2   : single target, single goal env, used for training DQN
 - dqn.py      : modify and run the file to train, result is stored in models folder
 - test_dqn_v2.py : test the trained model
