@@ -2,17 +2,15 @@
 NUS ME5406 Final Project
 
 # Overview
-This project uses DQN algorithms for reinforcement learning of Robotic Arm to perform Pick-and-Place (PnP) task. The environment used for training can be found in arm-v2/arm_2D_v2 which is used to train DQN models and the environment for testing using multiple targets can be found in arm-v3/arm_2D_v3.
+This project uses DQN algorithms for reinforcement learning of Robotic Arm to perform Pick-and-Place (PnP) task. The environment used for training can be found in arm_2D_v2 which is used to train DQN models and the environment for testing using multiple targets can be found in arm_2D_v3.
 
 # Main Files
-Models             : All trained models
-
-arm-v2/arm_2D_v2   : single target, single goal env, used for training DQN
-arm-v2/dqn.py      : modify and run the file to train, result is stored in Models folder
-arm-v2/test_dqn.py : test the trained model
-
-arm-v3/arm_2D_v3   : multiple targets, single goal env, not for training
-arm-v3/test_dqn.py : test the trained model to PnP multiple targets
+- Models      : All trained models
+- arm_2D_v2   : single target, single goal env, used for training DQN
+- dqn.py      : modify and run the file to train, result is stored in Models folder
+- test_dqn_v2.py : test the trained model
+- arm_2D_v3   : multiple targets, single goal env, not for training
+- test_dqn_v3.py : test the trained model to PnP multiple targets
 
 # Packages needed
 gym, pygame, tensorflow, numpy, scipy
@@ -44,7 +42,7 @@ for i in range(10):
             print('score:', score)
             break
 
-print('Success rate: ', success)
+print('Success rate: ', success*10, '%')
 
 env.close()
 ```
