@@ -16,7 +16,13 @@ This project uses DQN algorithms for reinforcement learning of Robotic Arm to pe
 # Packages needed
 gym, pygame, tensorflow, numpy, scipy
 
-## testing code
+# Testing 
+Run test_dqn_v3.py to test multiple objects PnP.  
+## Trained model 
+FCNN: final_arm_model_dqn_FCNN1.h5 / final_arm_model_dqn_FCNN2.h5  
+CNN: final_arm_model_dqn_CNN1.h5 / final_arm_model_dqn_CNN2.h5  
+LSTM: final_arm_model_dqn_LSTM.h5  
+## Testing code 
 ```
 import gym
 import arm_2D_v3
