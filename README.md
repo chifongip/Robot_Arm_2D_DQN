@@ -44,7 +44,7 @@ for i in range(10):
             print('score:', score)
             break
 
-print('Success rate: ', success)
+print('Success rate: ', success*10, '%')
 
 env.close()
 ```
