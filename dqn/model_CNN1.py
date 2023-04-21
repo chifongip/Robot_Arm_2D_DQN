@@ -72,7 +72,7 @@ class DQN(object):
 
     # store experiences in a replay memory, randomly sampled during nn training
     def remember(self, s, a, next_s, reward):
-        """Addtional rewards when robotic arm approaches target/goal for faster convergence"""
+        """Additional rewards when robotic arm approaches target/goal for faster convergence"""
         # observation space : [joint_1_theta, joint_2_theta, target_tip_dis_x, target_tip_dis_y, goal_tip_dis_x, goal_tip_dis_y, PnP_action]
         
         # if arm approaches target and PnP_action == 0
@@ -104,7 +104,7 @@ class DQN(object):
         # Q-learning
         for i, replay in enumerate(replay_batch):
             _, a, _, reward = replay
-            Q[i][a] = (1 - lr) * Q[i][a] + lr * (reward + dis_factor * np.amax(Q_next[i]))      # Update Q table using update rule
+            Q[i][a] = (1 - lr) * Q[i][a] + lr * (reward + dis_factor * np.amax(Q_next[i]))      # update Q table using update rule
  
         # pass into the network for training
         self.model.fit(s_batch, Q, verbose=0)

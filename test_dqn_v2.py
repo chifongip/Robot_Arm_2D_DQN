@@ -6,11 +6,11 @@ from tensorflow.keras import models
 
 
 env = arm_2D_v2.Arm_2D_v2()         # initial environment 
-model = models.load_model('models/final_arm_model_dqn_LSTM.h5')   # load model 
+model = models.load_model('models/final_arm_model_dqn_FCNN1.h5')   # load model 
 
 success = 0 
 
-for i in range(10):
+for i in range(100):
     s = env.reset()
     score = 0
     while True:

@@ -104,7 +104,7 @@ class Arm_2D_v3(gym.Env):
         return targets """
     
 
-    # generate multiple targets without collosion 
+    # generate multiple targets without collision 
     def generate_multiple_targets(self, num_target):
         targets = []
         for i in range(num_target):
@@ -400,7 +400,6 @@ class Arm_2D_v3(gym.Env):
 
     # rendering 
     def render(self, mode='human'):
-        # SCREEN_COLOR = (50, 168, 52)
         SCREEN_COLOR = (193, 255, 193)
         if self.viewer == None:
             pygame.init()

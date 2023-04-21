@@ -46,7 +46,7 @@ class DQN(object):
                 return np.random.choice([0, 1, 2, 3]) 
             return np.argmax(self.model.predict(np.array([s]))[0])
         
-        # when epsilon is very small ( less than 0.2 )
+        # when epsilon is very small (less than 0.2)
         elif (epsilon - self.step * decay_constant) <= 0.2:
             if np.random.uniform() < 0.2:
                 return np.random.choice([0, 1, 2, 3]) 
@@ -60,14 +60,14 @@ class DQN(object):
 
 
     # save the trained model
-    def save_model(self, file_path='models/test_arm_model-v7-dqn.h5'):
+    def save_model(self, file_path='models/final_arm_model_dqn_FCNN2.h5'):
         print('Model saved')
         self.model.save(file_path)
 
 
     # store experiences in a replay memory, randomly sampled during nn training
     def remember(self, s, a, next_s, reward):
-        """Addtional rewards when robotic arm approaches target/goal for faster convergence"""
+        """Additional rewards when robotic arm approaches target/goal for faster convergence"""
         # observation space : [joint_1_theta, joint_2_theta, target_tip_dis_x, target_tip_dis_y, goal_tip_dis_x, goal_tip_dis_y, PnP_action]
         
         # if arm approaches target and PnP_action == 0
@@ -99,7 +99,7 @@ class DQN(object):
         # Q-learning
         for i, replay in enumerate(replay_batch):
             _, a, _, reward = replay
-            Q[i][a] = (1 - lr) * Q[i][a] + lr * (reward + dis_factor * np.amax(Q_next[i]))      # Update Q table using update rule
+            Q[i][a] = (1 - lr) * Q[i][a] + lr * (reward + dis_factor * np.amax(Q_next[i]))      # update Q table using update rule
  
         # pass into the network for training
         self.model.fit(s_batch, Q, verbose=0)
@@ -146,10 +146,11 @@ env.close()
 arr_rounded = np.round(score_list, decimals=2)
 print(arr_rounded)
 
-with open("figs/test_model_v7.txt", "w") as file:
+with open("figs/FCNN2.txt", "w") as file:
     file.write(str(arr_rounded))
 
 plt.plot(score_list, color='green')
 plt.xlabel('Episodes')
 plt.ylabel('Scores')
-plt.savefig('figs/test_model_v7.jpg')
+plt.savefig('figs/FCNN2.jpg')
+
